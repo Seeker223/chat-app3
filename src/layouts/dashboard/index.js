@@ -1,13 +1,17 @@
-import { Box, Stack, IconButton } from "@mui/material";
+import { Box, Stack, IconButton, Divider } from "@mui/material";
 import {useTheme} from "@mui/material/styles"
-import React from "react";
+import React, {useState} from "react";
 import { Outlet } from "react-router-dom";
 import Logo from "../../assets/Images/logo.ico"
 import {Nav_Buttons} from "../../data/index.js";
+import { Gear } from "phosphor-react";
 const DashboardLayout = () => {
 
 const theme = useTheme();
 
+const [selected, setSelected] = useState(0);
+
+console.log(theme);
   return (
     <>
 <Box 
@@ -18,7 +22,7 @@ p={2}
         height:"100vh",
          width: 100 }}>
 
-  <Stack direction="column" alignItems={"center"} sx={{width: "100%"}}>
+  <Stack direction="column" alignItems={"center"} sx={{width: "100%"}} spacing={3}>
   <Box 
   sx={{
   backgroundColor: theme.palette.primary.main,
@@ -29,17 +33,33 @@ p={2}
 
 <img src={Logo} alt={"Chat App Logo"} />
 </Box>
-  <Stack>
-  {Nav_Buttons.map((el) => (
-       <IconButton key={el.index}>
-        {el.icon }
-       </IconButton>))}
+  <Stack 
+  sx={{
+    width: "max-content"}} 
+    direction="column" alignItems="center" 
+    spacing={3}>
 
+  {Nav_Buttons.map((el) => (
+       <Box
+       p={1} 
+       sx={{
+        backgroundColor: theme.palette.primary.main,
+        borderRadius: 1.5,
+       }}
+    >
+
+<IconButton sx={{width:"max-content", color: "#fff"}} key={el.index}>{el.icon }</IconButton>
+       </Box>
+     ))}
+       <Divider />
+       <IconButton>
+        <Gear/>
+       </IconButton>
   </Stack>
       
+
        </Stack>
       </Box>
-
       <Outlet />
     </>
   );
