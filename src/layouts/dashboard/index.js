@@ -74,13 +74,27 @@ const DashboardLayout = () => {
                 </IconButton>
             )
             )}
-            <Divider />
-            <IconButton>
+            <Divider  sx={{width:"48px"}}/>
+            {selected === 3 ? 
+            <Box
+            p={1}
+            sx={{
+              backgroundColor: theme.palette.primary.main,
+              borderRadius: 1.5,
+            }}
+          >
+            <IconButton sx={{width:"max-content", color: "#000"}}>
               <Gear />
             </IconButton>
+               </Box>
+             
+             :  <IconButton  onClick={() => {
+              setSelected(3);
+            }}>
+             <Gear />
+           </IconButton>
+            }
           </Stack>
-
-
         </Stack>
       </Box>
       <Outlet />
