@@ -1,10 +1,12 @@
-import { Box, Stack, IconButton, Divider } from "@mui/material";
+import { Box, Stack, IconButton, Divider, Avatar } from "@mui/material";
 import { useTheme } from "@mui/material/styles"
 import React, { useState } from "react";
 import { Outlet } from "react-router-dom";
 import Logo from "../../assets/Images/logo.ico"
 import { Nav_Buttons } from "../../data/index.js";
 import { Gear } from "phosphor-react";
+import { faker } from '@faker-js/faker';
+
 const DashboardLayout = () => {
 
   const theme = useTheme();
@@ -74,26 +76,32 @@ const DashboardLayout = () => {
                 </IconButton>
             )
             )}
-            <Divider  sx={{width:"48px"}}/>
-            {selected === 3 ? 
-            <Box
-            p={1}
-            sx={{
-              backgroundColor: theme.palette.primary.main,
-              borderRadius: 1.5,
-            }}
-          >
-            <IconButton sx={{width:"max-content", color: "#000"}}>
-              <Gear />
-            </IconButton>
-               </Box>
-             
-             :  <IconButton  onClick={() => {
-              setSelected(3);
-            }}>
-             <Gear />
-           </IconButton>
+            <Divider sx={{ width: "48px" }} />
+            {selected === 3 ?
+              <Box
+                p={1}
+                sx={{
+                  backgroundColor: theme.palette.primary.main,
+                  borderRadius: 1.5,
+                }}
+              >
+                <IconButton
+                  sx={{ width: "max-content", color: "#fff" }}>
+                  <Gear />
+                </IconButton>
+              </Box>
+
+              : <IconButton onClick={() => {
+                setSelected(3);
+              }}
+              >
+                sx={{ width: "max-content", color: "#000" }}
+                <Gear />
+              </IconButton>
             }
+          </Stack>
+          <Stack>
+            <Avatar src={faker.image.avatar()} />
           </Stack>
         </Stack>
       </Box>
