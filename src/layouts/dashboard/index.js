@@ -76,14 +76,17 @@ const DashboardLayout = () => {
               borderRadius: 1.5,
             }}
           >
-            <IconButton sx={{width:"max-content", color: "#000"}}>
+            <IconButton 
+            sx={{width:"max-content", color: "#fff"}}>
               <Gear />
             </IconButton>
                </Box>
 
              :  <IconButton  onClick={() => {
               setSelected(3);
-            }}>
+            }}
+            sx={{width:"max-content", color: "#000"}}
+           >
              <Gear />
            </IconButton>
             }
