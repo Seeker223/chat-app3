@@ -94,7 +94,9 @@ const DashboardLayout = () => {
            </IconButton>
             }
           </Stack>
+          <Stack>
           <Avatar  src={faker.image.avatar()}/>
+          </Stack>
         </Stack>
       </Box>
       <Outlet />
