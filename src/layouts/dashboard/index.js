@@ -22,8 +22,14 @@ const DashboardLayout = () => {
           height: "100vh",
           width: 100
         }}>
-        <Stack direction="column" alignItems={"center"} sx={{ width: "100%" }} spacing={3}>
-          <Box
+        <Stack 
+        direction="column" 
+        alignItems={"center"} 
+        sx={{ width: "100%" }} 
+        spacing={3}>
+         
+         <Stack alignItems={"center"} spacing={4}>
+         <Box
             sx={{
               backgroundColor: theme.palette.primary.main,
               height: 64,
@@ -34,10 +40,11 @@ const DashboardLayout = () => {
           </Box>
           <Stack
             sx={{
-              width: "max-content"
-            }}
+            width: "max-content"}}
             direction="column" alignItems="center"
-            spacing={3}>
+            spacing={3}
+            >
+
             {Nav_Buttons.map((el) => (
               el.index === selected ?
                 <Box
@@ -94,6 +101,9 @@ const DashboardLayout = () => {
            </IconButton>
             }
           </Stack>
+         </Stack>
+
+          
           <Stack>
           <Avatar  src={faker.image.avatar()}/>
           </Stack>
