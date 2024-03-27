@@ -7,6 +7,8 @@ import { Nav_Buttons } from "../../data/index.js";
 import { Gear } from "phosphor-react";
 import {faker} from '@faker-js/faker';
 
+import useSettings from "../../hooks/useSettings";
+
 const AntSwitch = styled(Switch)(({ theme }) => ({
   width: 28,
   height: 16,
@@ -50,9 +52,15 @@ const AntSwitch = styled(Switch)(({ theme }) => ({
 }));
 
 const DashboardLayout = () => {
-  const theme = useTheme();
+  
+  const theme = useTheme(); 
+
   const [selected, setSelected] = useState(0);
+  
   console.log(theme);
+
+  const {onToggleMode} = useSettings();
+
   return (
     <>
       <Box
@@ -147,7 +155,9 @@ const DashboardLayout = () => {
 
           
           <Stack spacing={4}>
-            <AntSwitch defaultChecked/>
+            <AntSwitch onChange={() =>{
+              onToggleMode();
+            }} defaultChecked/>
           <Avatar  src={faker.image.avatar()}/>
           </Stack>
         </Stack>
