@@ -8,7 +8,13 @@ const GeneralApp = () => {
     <Stack direction={"row"} sx={{width:"100%"}}>
       <Chats/>
 
-      <Box>
+      <Box 
+        sx={{
+        height: "100%", 
+        width: "calc(100vw - 420px)",
+        backgroundColor: "fff"
+    }}
+    >
 
       </Box>
     </Stack> 
