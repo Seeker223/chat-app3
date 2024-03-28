@@ -63,6 +63,7 @@ const DashboardLayout = () => {
 
   return (
     <>
+    <Stack direction="row">
       <Box
         p={2}
         sx={{
@@ -165,6 +166,7 @@ const DashboardLayout = () => {
         
       </Box>
       <Outlet />
+      </Stack>
     </>
   );
 };
