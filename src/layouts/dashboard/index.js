@@ -160,7 +160,9 @@ const DashboardLayout = () => {
             }} defaultChecked/>
           <Avatar  src={faker.image.avatar()}/>
           </Stack>
+          
         </Stack>
+        
       </Box>
       <Outlet />
     </>
