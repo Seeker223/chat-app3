@@ -62,7 +62,7 @@ const DashboardLayout = () => {
   const {onToggleMode} = useSettings();
 
   return (
-    <>
+    
     <Stack direction="row">
       <Box
         p={2}
@@ -167,7 +167,7 @@ const DashboardLayout = () => {
       </Box>
       <Outlet />
       </Stack>
-    </>
+    
   );
 };
 export default DashboardLayout;
